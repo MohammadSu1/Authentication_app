@@ -8,7 +8,7 @@ authors = ["Mohammad Sulaiman <mohammad.sulaiman@exalt.ps>"]
 homepage = "https://github.com/MohammadSu1/Authentication_app"
 repository = "https://github.com/MohammadSu1/Authentication_app"
 keywords = ["secret", "rsa", "jwt", "cryptography"]
-categories = ["cryptography", "security"]
+categories = ["cryptography", "development-tools::cargo-plugins"]
 readme = "README.md"
 
 [dependencies]
