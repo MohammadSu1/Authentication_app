@@ -164,6 +164,8 @@ dependencies = [
 [[package]]
 name = "jwt_modes"
 version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "07433bedc0940ffaf321b4a4eb97106ecab198901d68d1e622c4f69a9f8c8cd0"
 dependencies = [
  "jsonwebtoken",
  "pem",
