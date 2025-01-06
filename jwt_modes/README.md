@@ -27,3 +27,29 @@ Add this crate to your **Cargo.toml** file:
 ```Rust
 [dependencies]
 jwt_modes = "0.1.1"
+```
+## Usage
+Here's an example of how to use this crate using RSA JWT:
+### RSA-Based JWTs
+```Rust
+use jwt_modes::{key_existance, read_keys, generate_jwt, save_keys, verify_jwt};
+
+fn main() {
+   let user_id = "user123";
+   let email = "user.user@gmail.com";
+   let(private_key, public_key) = key_existance();
+   let token = generate_jwt(&private_key, user_id, email);
+   let claims = verify_jwt(&token, &public_key);
+}
+```
+### Secret Key-Based JWTs
+```Rust
+use jwt_modes::{generate_jwt, verify_jwt};
+fn main(){
+   let secret = "User1984@";
+   let user_id = "user123";
+   let email = "user.user@gmail.com";
+   let token = generate_jwt(secret, user_id, email);
+   let claims = verify_jwt(&token, secret);
+}
+```
