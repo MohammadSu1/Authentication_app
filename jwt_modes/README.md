@@ -10,16 +10,20 @@ This project implements a robust authentication system using both secret key aut
 
 ## Getting Started
 
-### Prerequisites
-1. Rust (version 1.50 or later)
-2. Cargo (Rust package manager)
+### RSA-Based JWTs
+1. **Check Key Existence**: Use the *key_existance* function to determine whether RSA public and private keys already exist.
+2. **Read Existing Keys**: If keys are found, the *read_keys* function will read and load them for use.
+3. **Generate New Keys**: If no keys exist, the generate_jwt function will create new RSA keys.
+4. **Save Keys**: After generatig or reading keys, you can save them using the *save_keys* function for future use.
+5. **Verify Keys**: To validate any public key, use the *verify_jwt* function.
 
-### Installation
-1. Clone the repository
-   ```bash
-   git clone https://github.com/MohammadSu1/Authentication_app.git
-   cd Authentication_app
+### Secret Key-Based JWTs
+If you prefer to use a secret key instead of RSA, you can utilize the following:
+1. **Generate JWT**: Use the *generate_jwt* function under the *jwt_secret* module to create a JWT.
+2. **Verify JWT**: Use the *verify_jwt* function under the *jwt_secret* module to validate a secret-based JWT.
 
-2. Build the project
-   ```Rust
-   cargo build
+## Installation
+Add this crate to your **Cargo.toml** file:
+```Rust
+[dependencies]
+jwt_modes = "0.1.1"
